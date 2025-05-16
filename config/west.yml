@@ -1,20 +1,38 @@
+# This file specifies the build dependencies for Github Action workflows and
+# for local build environments. The workspace has four toplevel directories
+# containing the user config, modules, zephy and ZMK.
+#
+# ZMK-Workspace
+# ├── config
+# ├── modules
+# ├── zephyr
+# └── zmk
+#
+# To create a local build environment, clone this repository and then run the
+# following commands from its toplevel directory:
+#
+# $ west init -l config
+# $ west update
+# $ west zephyr-export
+#
+---
 manifest:
   defaults:
     remote: urob
     revision: v0.2 # Pin everything to v0.2
+
   remotes:
     - name: urob
       url-base: https://github.com/urob
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
       import: app/west.yml
 
     # ZMK modules
-
     - name: zmk-adaptive-key
       path: modules/zmk/adaptive-key
     - name: zmk-auto-layer
@@ -26,30 +44,21 @@ manifest:
     - name: zmk-tri-state
       path: modules/zmk/tri-state
 
-    # Apply patch to fix child nodes issue
+    # Temporarily overload Zephyr until
+    # https://github.com/zmkfirmware/zephyr/pull/40 is merged.
     - name: zephyr
-      remote: urob
       revision: v3.5.0+zmk-fixes
       clone-depth: 1
       import:
-        name-blocklist:
-          - ci-tools
-          - hal_altera
-          - hal_cypress
-          - hal_infineon
-          - hal_microchip
-          - hal_nxp
-          - hal_openisa
-          - hal_silabs
-          - hal_xtensa
-          - hal_st
-          - hal_ti
-          - loramac-node
-          - mcuboot
-          - mcumgr
-          - net-tools
-          - openthread
-          - edtt
-          - trusted-firmware-m
+        # Only enable most commonly used boards. For less common hardware one
+        # may need to enable additional modules.
+        name-allowlist:
+          - cmsis
+          - hal_nordic
+          - hal_rpi_pico
+          - hal_stm32
+          - lvgl
+          - tinycrypt
+
   self:
     path: config
