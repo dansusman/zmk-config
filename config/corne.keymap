@@ -137,11 +137,12 @@ ZMK_HOLD_TAP(lt_spc, bindings = <&mo>, <&spc_morph>; flavor = "balanced";
 SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
           tap-ms = <5>;)
-// ZMK_MACRO(HYPER, bindings = <&kp LSHFT &kp LGUI &kp LALT &kp LCTRL>; wait-ms = <0>;
-//           tap-ms = <5>;)
 
-// TODO: Hyper key
-#define HYPER &trans
+ZMK_BEHAVIOR(hyper, macro,
+    wait-ms = <100>;
+    tap-ms = <5>;
+    bindings = <&kp LSHFT &kp LGUI &kp LALT &kp LCTRL>;
+)
 
 // TODO: Repeat key
 #define REPEAT &trans
@@ -161,7 +162,7 @@ ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
      &kp ESC          &hml LCTRL S     &hml LALT T      &hml LGUI R      &hml LSHFT D     &kp Y                 &kp F            &hmr RSHFT N     &hmr RGUI E      &hmr RALT A     &hmr RCTRL I     &kp SLASH
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
-     &HYPER           &kp X            &kp K            &kp J            &lt SYM G        &kp W                 &kp Z            &lt SYM H        &comma_morph     &dot_morph      &kp SQT          &kp RET
+     &hyper           &kp X            &kp K            &kp J            &lt SYM G        &kp W                 &kp Z            &lt SYM H        &comma_morph     &dot_morph      &kp SQT          &kp RET
 // ╰────────────────┴────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────╯
                                                         &lt FN MINUS     &lt SYS UNDER    REPEAT                &lt_spc NAV 0    &lt NAV RETURN   SMART_NUM
 //                                                    ╰────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────╯
