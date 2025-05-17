@@ -1,0 +1,260 @@
+layout: {zmk_keyboard: corne}
+layers:
+  base:
+  - TAB
+  - V
+  - M
+  - L
+  - C
+  - P
+  - B
+  - MAGIC
+  - U
+  - O
+  - Q
+  - BSPC
+  - ESC
+  - {t: S, h: LCTRL}
+  - {t: T, h: LALT}
+  - {t: R, h: LGUI}
+  - {t: D, h: LSHFT}
+  - Y
+  - F
+  - {t: N, h: RSHFT}
+  - {t: E, h: RGUI}
+  - {t: A, h: RALT}
+  - {t: I, h: RCTRL}
+  - RET
+  - {t: HYPER, h: sticky}
+  - X
+  - K
+  - J
+  - {t: G, h: symbol}
+  - W
+  - Z
+  - {t: H, h: symbol}
+  - {t: ',', s: ';'}
+  - {t: '.', s: ':'}
+  - ''''
+  - /
+  - {t: function, h: toggle}
+  - {t: system, h: toggle}
+  - REPEAT
+  - {t: SPC, h: NAV, s: Sentence}
+  - {t: navigation, h: toggle}
+  - {t: Numword, h: NUM, s: Sticky NUM}
+  symbol:
+  - tmux leader
+  - '`'
+  - <
+  - '>'
+  - '-'
+  - '|'
+  - ^
+  - '}'
+  - '{'
+  - $
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '!'
+  - '*'
+  - /
+  - '='
+  - '&'
+  - '#'
+  - )
+  - (
+  - ;
+  - '"'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '~'
+  - +
+  - '['
+  - {t: ']', type: held}
+  - '%'
+  - '@'
+  - ':'
+  - ','
+  - .
+  - ''''
+  - {t: ▽, type: trans}
+  - {t: symbol, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  navigation:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: LCTRL, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LGUI, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ←, s: HOME}
+  - {t: ↓, s: Ctl+END}
+  - {t: ↑, s: Ctl+HOME}
+  - {t: →, s: END}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: navigation, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  function:
+  - F15
+  - F12
+  - F7
+  - F8
+  - F9
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F14
+  - {t: F11, h: LCTRL}
+  - {t: F4, h: LALT}
+  - {t: F5, h: LGUI}
+  - {t: F6, h: LGUI}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ←, s: HOME}
+  - {t: ↓, s: Ctl+END}
+  - {t: ↑, s: Ctl+HOME}
+  - {t: →, s: END}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F10
+  - F1
+  - F2
+  - F3
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: function, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  number:
+  - {t: ▽, type: trans}
+  - /
+  - '7'
+  - '8'
+  - '9'
+  - '*'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: 0, h: LCTRL}
+  - {t: 4, h: LALT}
+  - {t: 5, h: LGUI}
+  - {t: 6, h: LGUI}
+  - +
+  - {t: ▽, type: trans}
+  - {t: RSHIFT, h: sticky}
+  - {t: RGUI, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: RCTRL, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '%'
+  - '1'
+  - '2'
+  - '3'
+  - '-'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: number, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  system:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:volume-off$$
+  - $$mdi:volume-medium$$
+  - $$mdi:volume-high$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-forward$$
+  - {t: ▽, type: trans}
+  - {t: LCTRL, h: sticky}
+  - {t: LALT, h: sticky}
+  - {t: LGUI, h: sticky}
+  - {t: LSHFT, h: sticky}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - MOUSE ←
+  - $$mdi:mouse-move-down$$
+  - $$mdi:mouse-move-up$$
+  - MOUSE →
+  - $$mdi:skip-backward$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:mouse-right-click$$
+  - $$mdi:mouse-left-click$$
+  - $$mdi:brightness-4$$
+  - $$mdi:brightness-7$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: system, h: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
