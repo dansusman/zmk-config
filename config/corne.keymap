@@ -82,28 +82,6 @@ hold-trigger-key-positions = <0>;
 #define NAV_BSPC  &mt LC(BSPC) BSPC  // Tap: bspc  | Long-tap: delete word bwd.
 #define NAV_DEL   &mt LC(DEL)  DEL   // Tap: del   | Long-tap: delete word fwd.
 
-/* Magic-shift & auto-layers */
-
-// Tap: repeat after alpha, else sticky-shift |
-// Shift + tap/ double-tap: caps-word | Hold: shift.
-#define MAGIC_SHIFT &magic_shift LSHFT 0
-ZMK_HOLD_TAP(magic_shift, bindings = <&kp>, <&magic_shift_tap>;
-flavor = "balanced"; tapping-term-ms = <200>;
-quick-tap-ms = <QUICK_TAP_MS>;)
-ZMK_MOD_MORPH(magic_shift_tap, bindings = <&shift_repeat>, <&caps_word>;
-mods = <(MOD_LSFT)>;)
-ZMK_ADAPTIVE_KEY(
-shift_repeat, bindings = <&sk LSHFT>;
-    repeat {
-    trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-    bindings = <&key_repeat>;
-    max-prior-idle-ms = <1200>;
-    strict-modifiers;
-};)
-&caps_word { // Mods deactivate caps-word, requires PR #1451. [TODO: rebase]
-    /delete-property/ ignore-modifiers;
-};
-
 // Tap: num-word | double-tap: sticky num-layer | Hold: num-layer.
 #define SMART_NUM &smart_num NUM 0
 ZMK_HOLD_TAP(smart_num, bindings = <&mo>, <&num_dance>; flavor = "balanced";
@@ -144,11 +122,43 @@ ZMK_BEHAVIOR(hyper, macro,
     bindings = <&kp LSHFT &kp LGUI &kp LALT &kp LCTRL>;
 )
 
-// TODO: Repeat key
-#define REPEAT &trans
+// TODO: Implement repeat overrides?
+#define REPEAT &alt_repeat LSHIFT 0
+ZMK_ADAPTIVE_KEY(
+    alt_repeat, bindings = <&kp>;
+    repeat {
+      trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+      bindings = <&key_repeat>;
+      max-prior-idle-ms = <1200>;
+    };
+)
 
-// TODO: Magic key
-#define MAGIC &trans
+#define MAGIC &magic STAR 0
+ZMK_ADAPTIVE_KEY(
+    magic, bindings = <&kp>;
+    akt_a_magic { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp O>;};                               // A *    = O
+    akt_c_magic { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // C *    = Y
+    akt_d_magic { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // D *    = Y
+    akt_e_magic { trigger-keys = <E>; max-prior-idle-ms = <300>; bindings = <&kp U>;};                               // E *    = U
+    akt_g_magic { trigger-keys = <G>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // G *    = Y
+    akt_i_magic { trigger-keys = <I>; max-prior-idle-ms = <300>; bindings = <&kp O &kp N>;};                         // I *    = ON
+    akt_j_magic { trigger-keys = <J>; max-prior-idle-ms = <300>; bindings = <&kp U &kp S &kp T>;};                   // J *    = UST
+    akt_k_magic { trigger-keys = <K>; max-prior-idle-ms = <300>; bindings = <&kp S>;};                               // K *    = S
+    akt_l_magic { trigger-keys = <L>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // L *    = K
+    akt_m_magic { trigger-keys = <M>; max-prior-idle-ms = <300>; bindings = <&kp E &kp N &kp T>;};                   // M *    = ENT
+    akt_n_magic { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp I &kp O &kp N>;};                   // N *    = ION
+    akt_o_magic { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>;};                               // O *    = A
+    akt_p_magic { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // P *    = Y
+    akt_q_magic { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U &kp E &kp N;};                    // Q *    = UEN
+    akt_r_magic { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>;};                               // R *    = L
+    akt_s_magic { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // S *    = K
+    akt_t_magic { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>;};             // T *    = MENT
+    akt_u_magic { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>;};                               // U *    = E
+    akt_y_magic { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>;};                               // Y *    = P
+    akt_comma_magic { trigger-keys = <COMMA>; max-prior-idle-ms = <300>; bindings = <&kp SPACE &kp B &kp U &kp T>;}; // , *    = ⎵BUT
+    akt_dot_magic { trigger-keys = <DOT>; max-prior-idle-ms = <300>; bindings = <&kp DOT &kp SLASH>;};               // . *    = ./
+    akt_wspc_magic { trigger-keys = <SPACE>; max-prior-idle-ms = <300>; bindings = <&kp T &kp H &kp E>;};            // wspc * = THE
+)
 
 / {
     keymap {
@@ -164,7 +174,7 @@ ZMK_BEHAVIOR(hyper, macro,
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
      &hyper           &kp X            &kp K            &kp J            &lt SYM G        &kp W                 &kp Z            &lt SYM H        &comma_morph     &dot_morph      &kp SQT          &kp RET
 // ╰────────────────┴────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────╯
-                                                        &lt FN MINUS     &lt SYS UNDER    REPEAT                &lt_spc NAV 0    &lt NAV RETURN   SMART_NUM
+                                                        &lt FN MINUS     &lt SYS UNDER    &key_repeat           &lt_spc NAV 0    &lt NAV RETURN   SMART_NUM
 //                                                    ╰────────────────┴────────────────┴────────────────╯    ╰────────────────┴────────────────┴────────────────╯
             >;
         };
