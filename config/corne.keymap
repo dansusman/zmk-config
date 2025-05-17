@@ -134,8 +134,7 @@ ZMK_BEHAVIOR(hyper, macro,
 // )
 
 #define MAGIC &magic STAR 0
-ZMK_ADAPTIVE_KEY(
-    magic, bindings = <&kp STAR>;
+ZMK_ADAPTIVE_KEY(magic, bindings = <&kp STAR>;
     akt_a_magic { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp O>;};                               // A *    = O
     akt_c_magic { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // C *    = Y
     akt_d_magic { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // D *    = Y
