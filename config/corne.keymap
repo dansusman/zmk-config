@@ -133,7 +133,6 @@ ZMK_BEHAVIOR(hyper, macro,
 //     };
 // )
 
-#define MAGIC &magic STAR 0
 ZMK_ADAPTIVE_KEY(
     magic, bindings = <&kp STAR>;
     akt_a_magic { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp O>;};                               // A *    = O
@@ -168,7 +167,7 @@ ZMK_ADAPTIVE_KEY(
             // Magic Sturdy
             bindings = <
 // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮    ╭────────────────┬────────────────┬────────────────┬───────────────┬────────────────┬────────────────╮
-     &kp TAB          &kp V            &kp M            &kp L            &kp C            &kp P                 &kp B            MAGIC            &kp U            &kp O           &kp Q            &kp BSPC
+     &kp TAB          &kp V            &kp M            &kp L            &kp C            &kp P                 &kp B            &magic           &kp U            &kp O           &kp Q            &kp BSPC
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
      &kp ESC          &hml LCTRL S     &hml LALT T      &hml LGUI R      &hml LSHFT D     &kp Y                 &kp F            &hmr RSHFT N     &hmr RGUI E      &hmr RALT A     &hmr RCTRL I     &kp SLASH
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
