@@ -148,7 +148,7 @@ ZMK_ADAPTIVE_KEY(
     akt_n_magic { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp I &kp O &kp N>;};                   // N *    = ION
     akt_o_magic { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>;};                               // O *    = A
     akt_p_magic { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // P *    = Y
-    // akt_q_magic { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U &kp E &kp N;};                    // Q *    = UEN
+    akt_q_magic { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U &kp E &kp N>;};                   // Q *    = UEN
     akt_r_magic { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>;};                               // R *    = L
     akt_s_magic { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // S *    = K
     akt_t_magic { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>;};             // T *    = MENT
