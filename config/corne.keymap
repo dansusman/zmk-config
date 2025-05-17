@@ -135,7 +135,7 @@ ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
-            bindings = <&kp LSHIFT &kp LGUI &kp LALT &kp LCTRL>;
+            bindings = <LSHIFT LGUI LALT LCTRL>;
         };
         magic: magic_key {
             compatible = "zmk,behavior-adaptive-key";
