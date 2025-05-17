@@ -123,19 +123,19 @@ ZMK_BEHAVIOR(hyper, macro,
 )
 
 // TODO: Implement repeat overrides?
-#define REPEAT &alt_repeat LSHIFT 0
-ZMK_ADAPTIVE_KEY(
-    alt_repeat, bindings = <&kp>;
-    repeat {
-      trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-      bindings = <&key_repeat>;
-      max-prior-idle-ms = <1200>;
-    };
-)
+// #define REPEAT &alt_repeat LSHIFT 0
+// ZMK_ADAPTIVE_KEY(
+//     alt_repeat, bindings = <&kp LSHIFT>;
+//     repeat {
+//       trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
+//       bindings = <&key_repeat>;
+//       max-prior-idle-ms = <1200>;
+//     };
+// )
 
 #define MAGIC &magic STAR 0
 ZMK_ADAPTIVE_KEY(
-    magic, bindings = <&kp>;
+    magic, bindings = <&kp STAR>;
     akt_a_magic { trigger-keys = <A>; max-prior-idle-ms = <300>; bindings = <&kp O>;};                               // A *    = O
     akt_c_magic { trigger-keys = <C>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // C *    = Y
     akt_d_magic { trigger-keys = <D>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // D *    = Y
