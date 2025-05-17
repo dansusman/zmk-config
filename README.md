@@ -11,7 +11,7 @@ custom macros for fancy things
 
 ## Layout 
 
-![](draw/keymap.svg)
+![Dan's keymap, illustrated](./draw/keymap.svg)
 
 I'm trying out Pascal Getreuer's
 [flavor](https://getreuer.info/posts/keyboards/alt-layouts/index.html#magic-sturdy)
