@@ -146,14 +146,14 @@ ZMK_ADAPTIVE_KEY(
     akt_l_magic { trigger-keys = <L>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // L *    = K
     akt_m_magic { trigger-keys = <M>; max-prior-idle-ms = <300>; bindings = <&kp E &kp N &kp T>;};                   // M *    = ENT
     akt_n_magic { trigger-keys = <N>; max-prior-idle-ms = <300>; bindings = <&kp I &kp O &kp N>;};                   // N *    = ION
-    // akt_o_magic { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>;};                               // O *    = A
-    // akt_p_magic { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // P *    = Y
+    akt_o_magic { trigger-keys = <O>; max-prior-idle-ms = <300>; bindings = <&kp A>;};                               // O *    = A
+    akt_p_magic { trigger-keys = <P>; max-prior-idle-ms = <300>; bindings = <&kp Y>;};                               // P *    = Y
     // akt_q_magic { trigger-keys = <Q>; max-prior-idle-ms = <300>; bindings = <&kp U &kp E &kp N;};                    // Q *    = UEN
-    // akt_r_magic { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>;};                               // R *    = L
-    // akt_s_magic { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // S *    = K
-    // akt_t_magic { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>;};             // T *    = MENT
-    // akt_u_magic { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>;};                               // U *    = E
-    // akt_y_magic { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>;};                               // Y *    = P
+    akt_r_magic { trigger-keys = <R>; max-prior-idle-ms = <300>; bindings = <&kp L>;};                               // R *    = L
+    akt_s_magic { trigger-keys = <S>; max-prior-idle-ms = <300>; bindings = <&kp K>;};                               // S *    = K
+    akt_t_magic { trigger-keys = <T>; max-prior-idle-ms = <300>; bindings = <&kp M &kp E &kp N &kp T>;};             // T *    = MENT
+    akt_u_magic { trigger-keys = <U>; max-prior-idle-ms = <300>; bindings = <&kp E>;};                               // U *    = E
+    akt_y_magic { trigger-keys = <Y>; max-prior-idle-ms = <300>; bindings = <&kp P>;};                               // Y *    = P
     akt_comma_magic { trigger-keys = <COMMA>; max-prior-idle-ms = <300>; bindings = <&kp SPACE &kp B &kp U &kp T>;}; // , *    = ⎵BUT
     akt_dot_magic { trigger-keys = <DOT>; max-prior-idle-ms = <300>; bindings = <&kp DOT &kp SLASH>;};               // . *    = ./
     akt_wspc_magic { trigger-keys = <SPACE>; max-prior-idle-ms = <300>; bindings = <&kp T &kp H &kp E>;};            // wspc * = THE
