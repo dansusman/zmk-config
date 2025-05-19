@@ -117,15 +117,11 @@ SIMPLE_MORPH(spc_morph, SFT, &kp SPACE, &dot_spc)
 ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
           tap-ms = <5>;)
 
-// #define REPEAT &alt_repeat LSHIFT 0
-// ZMK_ADAPTIVE_KEY(
-//     alt_repeat, bindings = <&kp LSHIFT>;
-//     repeat {
-//       trigger-keys = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z>;
-//       bindings = <&key_repeat>;
-//       max-prior-idle-ms = <1200>;
-//     };
-// )
+// Tap: mouse move {direction} | Shift + tap: fast mouse move {direction}
+SIMPLE_MORPH(mouse_up, SFT, U_MS_U, U_MS_FU)
+SIMPLE_MORPH(mouse_down, SFT, U_MS_D, U_MS_FD)
+SIMPLE_MORPH(mouse_left, SFT, U_MS_L, U_MS_FL)
+SIMPLE_MORPH(mouse_right, SFT, U_MS_R, U_MS_FR)
 
 / {
     behaviors {
@@ -250,7 +246,7 @@ ZMK_MACRO(dot_spc, bindings = <&kp DOT &kp SPACE &sk LSHFT>; wait-ms = <0>;
 // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮    ╭────────────────┬────────────────┬────────────────┬───────────────┬────────────────┬────────────────╮
      ___              ___              ___              ___              ___              ___                   ___              &kp C_MUTE       &kp C_VOL_DN     &kp C_VOL_UP    &kp C_PP         &kp C_NEXT
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
-     ___              &sk LCTRL        &sk LALT         &sk LGUI         &sk LSHFT        ___                   ___              U_MS_L           U_MS_D           U_MS_U          U_MS_R           &kp C_PREV
+     ___              &sk LCTRL        &sk LALT         &sk LGUI         &sk LSHFT        ___                   ___              &mouse_left      &mouse_down      &mouse_up       &mouse_right     &kp C_PREV
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────┤
      ___              ___              ___              ___              ___              ___                   U_MS_RC          U_MS_LC          &kp F14          &kp F15         ___              ___
 // ╰────────────────┴────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤    ├────────────────┼────────────────┼────────────────┼───────────────┼────────────────┼────────────────╯
